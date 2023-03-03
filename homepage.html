@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>SocioMedia</title>
+        <link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen">
+    </head>
+    <body>
+        <!---TOP HEADER-->
+        <div id="header">
+            <p id="copyright">copyright 2023 corpus callosum</p>
+            <div class="flexparent">
+                <a class="flexnavbutt">about</a>
+                <a class="flexnavbutt">contact</a>
+                <a class="flexnavbutt">terms</a>
+                <a class="flexnavbutt">privacy</a>
+                <a class="flexnavbutt">help</a>
+            </div>
+        </div>
+
+        <div class="flexparent">
+        <!---LEADERBOARD-->
+        <div class="board">
+            <h1>LEADERBOARD</h1>
+
+            <!---Leaderboard database-->
+            <div id="lbcontainer">
+                <!---Post template; replace placeholder text with data-->
+                <div class="post">
+                    <div class="ranking">1</div>
+                    <h1>Psychopath</h1>
+                    <div class="posttext">original post</div>
+                    <div class="upvotenum">upvotes</div>
+                    <div class="lbtotal">num of friends</div>
+                    <input type="button" id="message" value="message user">
+                    <input type="button" id="flag" value="flag as enemy">
+                    <input type="button" id="report" value="report user">
+                </div>
+            </div>
+
+        </div>
+        <!---FEED-->
+        <div class="board">
+            <h1>FEED</h1>
+
+            <!---Posts database-->
+            <div id="feedcontainer">
+                <!---Post template; replace placeholder text with data-->
+                <div class="post">
+                    <h1>Psychopath</h1>
+                    <div class="posttext">post text</div>
+                    <div>
+                        <input type="button" id="upvote" value="upvote">
+                        <input type="button" id="downvote" value="downvote">
+                        <input type="button" id="destroy" value="destory post">
+                        <input type="button" id="friend" value="add as aquaintance">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!---"FRIEND" LIST-->
+        <div class="board">
+            <h1>PROFILE</h1>
+
+            <!---Friends list database-->
+            <div id="friendcontainer">
+                <div class="post">
+                    <!---Post retrieved from database-->
+                    <div class="ranking">1</div>
+                        <h1>Psychopath</h1>
+                        <div class="postnum">num of total posts</div>
+                        <div class="friendnum">num of friends</div>
+                        <div>
+                            <input type="button" id="message" value="message user">
+                            <input type="button" id="flag" value="flag as enemy">
+                            <input type="button" id="report" value="report">
+                        </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+
+    <!---BOTTOM FOOTER-->
+    <div id="footer">
+        <a id="logo">SOCIO MEDIA</a>
+        <div class="flexparent">
+            <a class="flexnavbutt" href="homepage.html">HOME</a>
+            <a class="flexnavbutt">FEED</a>
+            <a class="flexnavbutt">PROFILE</a>
+            <a class="flexnavbutt">RESET</a>
+        </div>
+    </div>
+    </body>
+</html>
