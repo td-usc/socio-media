@@ -31,8 +31,33 @@ export const putTableItem = (tableName, item) => {
     })
 }
 
-export const updateTableItem = (tableName, key, attributes) => {
-    dbclient.putItem({ TableName: tableName, Key: key, ExpressionAttributeValues: attributes }, (err, data) => {
-        console.log(err, data)
+export const updateTableItem = (tableName, key, itemName, itemAttr) => {
+
+    // Upvotes and Downvotes
+    dbclient.getItem({ TableName: tableName, Key: key }, (err, data) => {
+
+        if(tableName === "socio-media-posts")
+        {
+            if (itemName !== "Upvotes" && itemName !== "Downvotes") 
+            {
+                console.log("Could not update post");
+                return;
+            }
+            if (itemName === "Upvotes")
+            {
+                if (itemAttr === "+") data.Item.Upvotes = {N: (Number(data.Item.Upvotes.N) + 1).toString()};
+                if (itemAttr === "-") data.Item.Upvotes = {N: (Number(data.Item.Upvotes.N) - 1).toString()};
+            }
+            if (itemName === "Downvotes")
+            {
+                if (itemAttr === "+") data.Item.Downvotes = {N: (Number(data.Item.Downvotes.N) + 1).toString()};
+                if (itemAttr === "-") data.Item.Downvotes = {N: (Number(data.Item.Downvotes.N) - 1).toString()};
+            }
+            
+        }
+
+        dbclient.putItem({ TableName: tableName, Item: data.Item }, (err, data) => {
+            console.log(err, data)
+        })
     })
 }
