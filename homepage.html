@@ -8,11 +8,11 @@
         <div id="header">
             <p id="copyright">copyright 2023 corpus callosum</p>
             <div class="flexparent">
-                <a class="flexnavbutt">about</a>
-                <a class="flexnavbutt">contact</a>
-                <a class="flexnavbutt">terms</a>
-                <a class="flexnavbutt">privacy</a>
-                <a class="flexnavbutt">help</a>
+                <a href="#" class="flexnavbutt">about</a>
+                <a href="#" class="flexnavbutt">contact</a>
+                <a href="#" class="flexnavbutt">terms</a>
+                <a href="#" class="flexnavbutt">privacy</a>
+                <a href="#" class="flexnavbutt">help</a>
             </div>
         </div>
 
@@ -30,9 +30,9 @@
                     <div class="posttext">original post</div>
                     <div class="upvotenum">upvotes</div>
                     <div class="lbtotal">num of friends</div>
-                    <input type="button" id="message" value="message user">
-                    <input type="button" id="flag" value="flag as enemy">
-                    <input type="button" id="report" value="report user">
+                    <input class="actbutton" type="button" id="message" value="message user">
+                    <input class="actbutton" type="button" id="flag" value="flag as enemy">
+                    <input class="actbutton" type="button" id="report" value="report user">
                 </div>
             </div>
 
@@ -48,13 +48,24 @@
                     <h1>Psychopath</h1>
                     <div class="posttext">post text</div>
                     <div>
-                        <input type="button" id="upvote" value="upvote">
-                        <input type="button" id="downvote" value="downvote">
-                        <input type="button" id="friend" value="add as aquaintance">
-                        <input type="button" id="destroy" value="destroy post">
+                        <input class="actbutton" type="button" id="upvote" value="upvote">
+                        <input class="actbutton" type="button" id="downvote" value="downvote">
+                        <input class="actbutton" type="button" id="destroy" value="destory post">
+                        <input class="actbutton" type="button" id="friend" value="add as aquaintance">
                     </div>
                 </div>
             </div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+            <script>
+                
+                $(document).ready(function(){
+                    $("#friend").on("click",function(){
+                        alert("USER added as a new friend");
+                    })
+                });
+
+            </script>
 
         </div>
         <!---"FRIEND" LIST-->
@@ -70,9 +81,9 @@
                         <div class="postnum">num of total posts</div>
                         <div class="friendnum">num of friends</div>
                         <div>
-                            <input type="button" id="message" value="message user">
-                            <input type="button" id="flag" value="flag as enemy">
-                            <input type="button" id="report" value="report">
+                            <input class="actbutton" type="button" id="message" value="message user">
+                            <input class="actbutton" type="button" id="flag" value="flag as enemy">
+                            <input class="actbutton" type="button" id="report" value="report">
                         </div>
                 </div>
             </div>
