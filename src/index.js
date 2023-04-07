@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as aws from './AWSFunctions';
 
+// AWS FUNCTIONS
 // Title of posts is username-postNumber
 // When posting, get username's post count via getTableItem and append that to username for post title
 // For posts, only call updateTableItem for upvote and downvote
@@ -18,9 +19,13 @@ aws.putTableItem("socio-media-users", {Username: {S: "Tim"}, Friends: {N: "0"}, 
 
 // Create Post
 aws.putTableItem("socio-media-posts", {Title: {S: "Tim-0"}, Upvotes: {N: "0"}, Downvotes: {N: "0"}, Content: {S: "Lorem ipsum"}})
-*/
 
-//aws.updateTableItem("socio-media-posts", {Title: {S: "Tim-0"}}, "Upvotes", "+");
+// Retrieve Posts
+aws.scanTable("socio-media-posts");
+
+// Update Item (Upvote/Downvote/Friends/Number of Posts)
+aws.updateTableItem("socio-media-posts", {Title: {S: "Tim-0"}}, "Upvotes", "+");
+*/
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
