@@ -13,6 +13,12 @@ export const describeTable = (tableName) => {
     })
 }
 
+export const scanTable = (tableName) => {
+    dbclient.scan({ TableName: tableName }, (err, data) => {
+        console.log(err, data)
+    })
+}
+
 export const deleteTableItem = (tableName, key) => {
     dbclient.deleteItem({ TableName: tableName, Key: key }, (err, data) => {
         console.log(err, data)
