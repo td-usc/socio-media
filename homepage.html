@@ -47,21 +47,38 @@
                 <div class="post">
                     <h1>Psychopath</h1>
                     <div class="posttext">post text</div>
+                    <div id="votes">Total Votes: 0</div>
                     <div>
                         <input class="actbutton" type="button" id="upvote" value="upvote">
                         <input class="actbutton" type="button" id="downvote" value="downvote">
-                        <input class="actbutton" type="button" id="destroy" value="destory post">
+                        <input class="actbutton" type="button" id="destroy" value="destroy post">
                         <input class="actbutton" type="button" id="friend" value="add as aquaintance">
                     </div>
+                    <div id="newfriend" class="popup"></div>
                 </div>
             </div>
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
             <script>
-                
                 $(document).ready(function(){
+                    var votes = 0;
+
+                    $("#upvote").on("click",function(){
+                        votes++;
+                        document.getElementById("votes").innerHTML = "Total Votes: " + votes;
+                    })
+                    $("#downvote").on("click",function(){
+                        votes--;
+                        document.getElementById("votes").innerHTML = "Total Votes: " + votes;
+                    })
+
+
+
                     $("#friend").on("click",function(){
-                        alert("USER added as a new friend");
+                        $("#newfriend").css("display","block");
+                        $("#newfriend").html("user added as friend");
+                        delay(3);
+                        $("#newfriend").css("display","none");
                     })
                 });
 
@@ -98,7 +115,7 @@
         <div class="flexparent">
             <a class="flexnavbutt" href="homepage.html">HOME</a>
             <a class="flexnavbutt">FEED</a>
-            <a class="flexnavbutt">PROFILE</a>
+            <a class="flexnavbutt" href="account.html">PROFILE</a>
             <a class="flexnavbutt">RESET</a>
         </div>
     </div>
