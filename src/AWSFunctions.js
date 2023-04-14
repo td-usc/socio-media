@@ -13,11 +13,27 @@ export const describeTable = (tableName) => {
     })
 }
 
+// export const scanTable = (tableName) => {
+//     return new Promise((resolve, reject) =>{
+//         dbclient.scan({ TableName: tableName }, (err, data) => {
+//             console.log(data);
+//             resolve(data);
+//         })
+//     });
+// }
 export const scanTable = (tableName) => {
-    dbclient.scan({ TableName: tableName }, (err, data) => {
-        console.log(err, data)
-    })
-}
+    return new Promise((resolve, reject) => {
+        dbclient.scan({ TableName: tableName }, (err, data) => {
+        // console.log("data")
+        // console.log(data.Items)
+          if (err) {
+            reject(err);
+          } else {
+            resolve(data.Items);
+          }
+        });
+      });
+};
 
 export const deleteTableItem = (tableName, key) => {
     dbclient.deleteItem({ TableName: tableName, Key: key }, (err, data) => {
