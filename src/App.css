@@ -36,3 +36,80 @@
     transform: rotate(360deg);
   }
 }
+
+.innerdiv{
+  max-width: 30vw;
+  height: auto;
+  background-color:gainsboro;
+  margin:20px 20px;
+  text-align:left;
+  padding:20px;
+  line-height:30px;
+}
+
+.innerdiv h5{
+  font-weight: 600;
+    margin: 1vh auto;
+}
+
+.innerdivbutton{
+  margin: 0 10px 0 0;
+}
+
+.flexparent{
+  display:flex;
+  justify-content: space-around;
+  margin:auto;
+  max-width:100%;
+  text-align:center;
+  gap:20px;
+}
+#header .flexparent{
+  width:600px;
+}
+.flexnavbutt{
+  width:100px;
+  text-decoration: none;
+  color: black;
+}
+#header{
+  border: 1px solid black;
+  max-width:100%;
+  font-size:15pt;
+  padding: 20pt 0pt;
+  margin:10pt 10pt;
+  font-style:italic;
+}
+#copyright{
+  font-size:10pt;
+  color:grey;
+  text-align:center;
+  font-style:normal;
+  margin-top:0;
+}
+
+.Mainbody{
+  display: flex;
+  width: 100vw;
+  height: auto;
+  justify-content: space-around;
+}
+
+.threecol{
+  border: 1px black solid;
+  width: 30vw;
+  height: auto;
+}
+
+.sectiontitle{    
+  background-color: gainsboro;
+  border: 1px solid black;
+  padding: 20px;
+  margin:20px 20px;
+  text-align: center;
+  font-size: xxx-large;
+}
+
+/* html, body {
+  overflow: hidden;
+} */
