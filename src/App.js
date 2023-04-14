@@ -12,18 +12,18 @@ function App() {
 
   //const feed = ["foo", "bar", "po"]
   // // in the returning div {feed.map(text => <div>{text}</div>)}
-  const Leaderboarditems = [
-    {username:"Alice", originalpost:"post1", upvotes:20, friendnum:50},
-    {username:"Kendra", originalpost:"post2", upvotes:18, friendnum:40}
-  ];
+  // const Leaderboarditems = [
+  //   {username:"Alice", originalpost:"post1", upvotes:20, friendnum:50},
+  //   {username:"Kendra", originalpost:"post2", upvotes:18, friendnum:40}
+  // ];
   // const Feeditems = [
   //   {username:"Alice", posttext:"hello1"},
   //   {username:"Kendra", posttext:"hello2"}
   // ];
-  const Profileitems = [
-    {username:"Psyc1", totalpost:3, friendnum:3},
-    {username:"Psyc1", totalpost:1, friendnum:10}
-  ];
+  // const Profileitems = [
+  //   {username:"Psyc1", totalpost:3, friendnum:3},
+  //   {username:"Psyc1", totalpost:1, friendnum:10}
+  // ];
 
   const [posts, setPosts] = useState([]);
   
@@ -36,14 +36,16 @@ function App() {
         console.error(err);
       });
   }, []);
-  console.log(posts)
+
+  // console.log(posts)
+  
   return (
     <div>
       <Navbar></Navbar>
       <div className='Mainbody'>
         <div className='threecol' id='Leaderboarddiv'>
           <h1 className='sectiontitle'>LEADERBOARD</h1>
-          {Leaderboarditems.map(item => <Leaderboard{...item}></Leaderboard>)}
+          {posts.map(item => <Leaderboard{...item}></Leaderboard>)}
         </div>
         <div className='threecol' id='Feeddiv'>
           <h1 className='sectiontitle'>FEED</h1>
@@ -51,7 +53,7 @@ function App() {
         </div>
         <div className='threecol' id='Profilediv'>
           <h1 className='sectiontitle'>PROFILE</h1>
-          {Profileitems.map(item => <Profile{...item}></Profile>)}
+          {posts.map(item => <Profile{...item}></Profile>)}
         </div>
       </div>
     </div>

@@ -2,13 +2,15 @@ import React from "react";
 import '../App.css';
 
 export default function Leaderboard(props){
-    const {username, originalpost, upvotes, friendnum} = props
+    // const {username, originalpost, upvotes, friendnum} = props
+    let name= props.Title.S
+    let namelist = name.split('-')
     return(
         <div className="innerdiv">
-            <h1>{username}</h1>
-            <h5>{originalpost}</h5>
-            <h5>{upvotes}</h5>
-            <h5>{friendnum}</h5>
+            <h1>{namelist[0]}</h1>
+            <h5>{props.Content.S}</h5>
+            <h5>{props.Downvotes.N}</h5>
+            <h5>{props.Upvotes.N}</h5>
 
             <button className="innerdivbutton">message user</button>
             <button className="innerdivbutton">flag as enemy</button>
