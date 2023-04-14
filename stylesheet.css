@@ -110,6 +110,9 @@
     .popup{
         display:none;
     }
+    h1, h2, h3{
+        margin-bottom:0;
+    }
 
 }
 @media screen and(max-width:768px){
