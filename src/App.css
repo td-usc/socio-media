@@ -77,7 +77,7 @@
   max-width:100%;
   font-size:15pt;
   padding: 20pt 0pt;
-  margin:10pt 10pt;
+  margin:10pt 25px;
   font-style:italic;
 }
 #copyright{
@@ -110,6 +110,17 @@
   font-size: xxx-large;
 }
 
-/* html, body {
-  overflow: hidden;
-} */
+#footer{
+  border:1px solid black;
+  margin:15px 25px 0px 25px;
+  padding: 20pt 30pt;
+  font-size:15px;
+}
+#footer .flexparent{
+  justify-content:flex-end;
+  gap:0px;
+}
+#footer #logo{
+  float:left;
+  font-weight:bold;
+}

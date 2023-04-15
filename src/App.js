@@ -5,6 +5,7 @@ import Feed from './Components/Feed.js';
 import Leaderboard from './Components/Leaderboard';
 import Navbar from './Components/Navbar';
 import Profile from './Components/Profile';
+import Footer from './Components/Footer';
 import { useState, useEffect } from 'react';
 
 
@@ -56,6 +57,7 @@ function App() {
           {posts.map(item => <Profile{...item}></Profile>)}
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
