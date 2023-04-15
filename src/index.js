@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import * as aws from './AWSFunctions';
+// import * as aws from './AWSFunctions';
 
 // AWS FUNCTIONS
 // Title of posts is username-postNumber

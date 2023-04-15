@@ -6,7 +6,10 @@ import Leaderboard from './Components/Leaderboard';
 import Navbar from './Components/Navbar';
 import Profile from './Components/Profile';
 import Footer from './Components/Footer';
+import Terms from './Components/Terms';
 import { useState, useEffect } from 'react';
+// import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+
 
 
 function App() {
@@ -27,7 +30,8 @@ function App() {
   // ];
 
   const [posts, setPosts] = useState([]);
-  
+  const [content, setContent] = useState('main');
+
   useEffect(() => {
     scanTable('socio-media-posts')
       .then((items) => {
@@ -37,24 +41,46 @@ function App() {
         console.error(err);
       });
   }, []);
+  const handleClick = (newcontent) => {
+    setContent(newcontent);
+  }
 
   // console.log(posts)
   
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
+      <div id="header">
+            <p id="copyright">copyright 2023 corpus callosum</p>
+            <div className="flexparent">
+                <a className="flexnavbutt" href="#" onClick={() => handleClick('about')}>about</a>
+                <a className="flexnavbutt" href="#" onClick={() => handleClick('contact')}>contact</a>
+                <a className="flexnavbutt" href="#" onClick={() => handleClick('terms')}>terms</a>
+                <a className="flexnavbutt" href="#" onClick={() => handleClick('privacy')}>privacy</a>
+                <a className="flexnavbutt" href="#" onClick={() => handleClick('help')}>help</a>
+            </div>
+        </div>
       <div className='Mainbody'>
-        <div className='threecol' id='Leaderboarddiv'>
+        <div className='threecol' id='Leaderboarddiv' tabIndex={0}>
           <h1 className='sectiontitle'>LEADERBOARD</h1>
-          {posts.map(item => <Leaderboard{...item}></Leaderboard>)}
+          <div className='threecolcontent'>
+            {posts.map(item => <Leaderboard{...item}></Leaderboard>)}
+            {posts.map(item => <Leaderboard{...item}></Leaderboard>)}
+          </div>
         </div>
-        <div className='threecol' id='Feeddiv'>
+        <div className='threecol' id='Feeddiv' tabIndex={0}>
           <h1 className='sectiontitle'>FEED</h1>
-          {posts.map(item => <Feed{...item}></Feed>)}
+          <div className='threecolcontent'>
+            {posts.map(item => <Feed{...item}></Feed>)}
+            {posts.map(item => <Feed{...item}></Feed>)}
+          </div>
         </div>
-        <div className='threecol' id='Profilediv'>
+        <div className='threecol' id='Profilediv' tabIndex={0}>
           <h1 className='sectiontitle'>PROFILE</h1>
-          {posts.map(item => <Profile{...item}></Profile>)}
+          <div className='threecolcontent'>
+            {posts.map(item => <Profile{...item}></Profile>)}
+            {posts.map(item => <Profile{...item}></Profile>)}
+          </div>
         </div>
       </div>
       <Footer></Footer>

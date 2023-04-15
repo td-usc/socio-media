@@ -98,16 +98,25 @@
 .threecol{
   border: 1px black solid;
   width: 30vw;
-  height: auto;
+  height: 75vh;
+  /* overflow:hidden; */
 }
 
 .sectiontitle{    
   background-color: gainsboro;
   border: 1px solid black;
   padding: 20px;
-  margin:20px 20px;
   text-align: center;
   font-size: xxx-large;
+  position: absolute;
+  margin: 20px 0px 0px 20px;
+  width: 25.2%;
+}
+
+.threecolcontent{
+  overflow: scroll;
+  height: calc(75vh - 140px);
+  margin-top: 140px;
 }
 
 #footer{
@@ -116,6 +125,7 @@
   padding: 20pt 30pt;
   font-size:15px;
 }
+
 #footer .flexparent{
   justify-content:flex-end;
   gap:0px;
