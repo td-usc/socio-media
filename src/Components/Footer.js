@@ -1,15 +1,16 @@
 import React from "react";
 import '../App.css';
+import {Link} from "react-router-dom";
 
 export default function Footer(){
     return (
         <div id="footer">
-            <a id="logo">SOCIO MEDIA</a>
+            <a id="logo" href="/">SOCIO MEDIA</a>
             <div class="flexparent">
-                <a class="flexnavbutt" /* href="homepage.html" */>HOME</a>
-                <a class="flexnavbutt">FEED</a>
-                <a class="flexnavbutt" /* href="account.html" */>PROFILE</a>
-                <a class="flexnavbutt">RESET</a>
+                <Link className="flexnavbutt" to="/">HOME</Link>
+                <Link className="flexnavbutt" to="/">FEED</Link>
+                <Link className="flexnavbutt" to="/profile">PROFILE</Link>
+                <Link className="flexnavbutt" to="/reset">RESET</Link>
             </div>
         </div>
     );

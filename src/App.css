@@ -128,9 +128,34 @@
 
 #footer .flexparent{
   justify-content:flex-end;
-  gap:0px;
+  /* gap:0px; */
 }
 #footer #logo{
   float:left;
   font-weight:bold;
+}
+
+#termsandcondition{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px 20%;
+  text-align: center;
+  justify-content: center;
+  height: 75vh;
+  overflow: scroll;
+}
+
+.aboutflexparent{
+  display: flex;
+  flex-direction: column;
+  padding: 0 20%;
+  text-align: center;
+  height: 75vh;
+  justify-content: center;
+  overflow: scroll;
+}
+
+.aboutinnerdiv{
+  text-align: left;
 }
