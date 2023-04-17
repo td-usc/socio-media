@@ -7,8 +7,8 @@ export default function Footer(){
         <div id="footer">
             <a id="logo" href="/">SOCIO MEDIA</a>
             <div class="flexparent">
-                <Link className="flexnavbutt" to="/">HOME</Link>
-                <Link className="flexnavbutt" to="/">FEED</Link>
+                <Link className="flexnavbutt" to="/home">HOME</Link>
+                <Link className="flexnavbutt" to="/home">FEED</Link>
                 <Link className="flexnavbutt" to="/profile">PROFILE</Link>
                 <Link className="flexnavbutt" to="/reset">RESET</Link>
             </div>
