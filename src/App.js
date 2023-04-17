@@ -13,7 +13,6 @@ import Privacy from './Components/Privacy';
 import Reset from './Components/Reset';
 import Help from './Components/Help';
 import Myaccount from './Components/Myaccount';
-// import Login from './Components/Login';
 import Signup from './Components/Signup';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Outlet, Navigate} from "react-router-dom";
@@ -66,7 +65,7 @@ function App() {
   // true will give access to all as if a user was logged in
   // false will loop them back to the login/sign up page
   // we would usually start with false, but just to make it work for now, it is set to true
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
 
   useEffect(() => {
     scanTable('socio-media-posts')
@@ -81,17 +80,30 @@ function App() {
   // run it when login button is clicked
   // currently not navigating to the correct screen for some reason
   // NEED TO SOLVE
-  function Authorize(un, pw){
-    // just to test the functionality
-    if(un === pw){
-      setUser(true);
-      return <Navigate to="/home"></Navigate>
-    } else {
-      return <Navigate to="/login"></Navigate>
-    }
+  const Authorize = (un, pw) => {
+    // if(un === pw){
+    //   setUser(true);
+    //   return <Navigate to="/home"></Navigate>;
+    // }
+    // return <Navigate to="/login"></Navigate>;
+    console.log("AUTHORIZE CALLED");
+    console.log(un === pw);
+    setUser(un === pw);
+    return <Navigate to='/home'></Navigate>
   }
 
+  // function Authorize(un, pw){
+  //   // just to test the functionality
+  //   if(un === pw){
+  //     setUser(true);
+  //     return <Navigate to="/home"></Navigate>
+  //   } else {
+  //     return <Navigate to="/login"></Navigate>
+  //   }
+  // }
+
   // make sure a user is logged in before allowing access to home, feed, terms, etc
+  
   const ProtectedRoute = ({children}) => {
     if(!user){
       return <Navigate to="/login"></Navigate>;
