@@ -52,6 +52,23 @@ export const createUser = (username) => {
         })
 }
 
+export const createPost = (username, content) => {
+    dbclient.getItem({ TableName: "socio-media-users", Key: username }, (err, data) => {
+        let prevPosts = 0;
+        if (data !== null) {
+            prevPosts = data.Items[0].Posts.N;
+        }
+        var Item = {
+            'Username' : {S: username + '-' + prevPosts},
+            'Content' : {S: content},
+            'DestroyCounter' : {N: '0'},
+            'Downvotes' : {N: '0'},
+            'Upvotes' : {N: '0'}
+        }
+        putTableItem("socio-media-posts", Item);
+    })
+}
+
 export const putTableItem = (tableName, item) => {
     dbclient.putItem({ TableName: tableName, Item: item }, (err, data) => {
         console.log(err, data)
