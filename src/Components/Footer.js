@@ -9,6 +9,7 @@ export default function Footer(){
             <div class="flexparent">
                 <Link className="flexnavbutt" to="/home">HOME</Link>
                 <Link className="flexnavbutt" to="/home">FEED</Link>
+                <Link className="flexnavbutt" to="/post">POST</Link>
                 <Link className="flexnavbutt" to="/profile">PROFILE</Link>
                 <Link className="flexnavbutt" to="/reset">RESET</Link>
             </div>

@@ -12,6 +12,7 @@ import Contact from './Components/Contact';
 import Privacy from './Components/Privacy';
 import Reset from './Components/Reset';
 import Help from './Components/Help';
+import Post from './Components/Post';
 import Myaccount from './Components/Myaccount';
 import Signup from './Components/Signup';
 import { useState, useEffect } from 'react';
@@ -125,6 +126,7 @@ function App() {
           <Route path="/terms" element={<Terms></Terms>} />
           <Route path="/privacy" element={<Privacy></Privacy>} />
           <Route path="/help" element={<Help></Help>} />
+          <Route path="/post" element={<Post></Post>} />
           <Route path="/profile" element={<Myaccount></Myaccount>}></Route>
           <Route path="/reset" element={<Reset></Reset>}></Route>
         </Route>

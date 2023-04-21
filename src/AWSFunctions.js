@@ -56,7 +56,7 @@ export const createPost = (username, content) => {
     dbclient.getItem({ TableName: "socio-media-users", Key: username }, (err, data) => {
         let prevPosts = 0;
         if (data !== null) {
-            prevPosts = data.Items[0].Posts.N;
+            prevPosts = data.Item.Posts.N;
         }
         var Item = {
             'Username' : {S: username + '-' + prevPosts},
@@ -75,27 +75,29 @@ export const putTableItem = (tableName, item) => {
     })
 }
 
-export const updateTableItem = (tableName, key, itemName, itemAttr) => {
+export const updateTableItem = (tableName, key, itemName) => {
 
     // Upvotes and Downvotes
     dbclient.getItem({ TableName: tableName, Key: key }, (err, data) => {
 
         if(tableName === "socio-media-posts")
         {
-            if (itemName !== "Upvotes" && itemName !== "Downvotes") 
+            if (itemName !== "Upvotes" && itemName !== "Downvotes" && itemName !== "DestroyCounter")
             {
                 console.log("Could not update post");
                 return;
             }
             if (itemName === "Upvotes")
             {
-                if (itemAttr === "+") data.Item.Upvotes = {N: (Number(data.Item.Upvotes.N) + 1).toString()};
-                if (itemAttr === "-") data.Item.Upvotes = {N: (Number(data.Item.Upvotes.N) - 1).toString()};
+                data.Item.Upvotes = {N: (Number(data.Item.Upvotes.N) + 1).toString()};
             }
             if (itemName === "Downvotes")
             {
-                if (itemAttr === "+") data.Item.Downvotes = {N: (Number(data.Item.Downvotes.N) + 1).toString()};
-                if (itemAttr === "-") data.Item.Downvotes = {N: (Number(data.Item.Downvotes.N) - 1).toString()};
+                data.Item.Downvotes = {N: (Number(data.Item.Downvotes.N) + 1).toString()};
+            }
+            if (itemName === "DestroyCounter")
+            {
+                data.Item.DestroyCounter = {N: (Number(data.Item.DestroyCounter.N) + 1).toString()};
             }
             
         }
