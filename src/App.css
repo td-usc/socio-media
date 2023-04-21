@@ -46,10 +46,13 @@
   padding:20px;
   line-height:30px;
 }
-
+.innerdiv h1{
+  overflow-wrap: break-word;
+}
 .innerdiv h5{
   font-weight: 600;
-    margin: 1vh auto;
+  margin: 1vh auto;
+  overflow-wrap: break-word;
 }
 
 .innerdivbutton{
