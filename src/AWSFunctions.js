@@ -53,6 +53,9 @@ export const createUser = (username) => {
 }
 
 export const createPost = (username, content) => {
+    console.log(username);
+    console.log(content);
+
     dbclient.getItem({ TableName: "socio-media-users", Key: username }, (err, data) => {
         let prevPosts = 0;
         if (data !== null) {

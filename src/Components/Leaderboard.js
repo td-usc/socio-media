@@ -13,6 +13,7 @@ export default function Leaderboard(props){
             <h5>{props.Upvotes.N}</h5>
 
             <button className="innerdivbutton">flag as enemy</button>
+            <button className="innerdivbutton">add as aquaintance</button>
             <button className="innerdivbutton">report user</button>
         </div>
       

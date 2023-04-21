@@ -115,7 +115,7 @@ function App() {
             <h1>Login Page (Just a template. We can change the design later. for now if username and password is same, it will pass the authorization)</h1>
             <form>
                 Username: <input name="username" value={username} onChange={(e) => setUsername(e.target.value)}></input><br></br>
-                <button type="submit" onClick={() => Authorize(username)}> <Link to="/home">Sumbit</Link> </button>
+                <button type="submit" onClick={() => Authorize(username)}> <Link to="/home">Submit</Link> </button>
             </form>
         </div>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
@@ -126,7 +126,7 @@ function App() {
           <Route path="/terms" element={<Terms></Terms>} />
           <Route path="/privacy" element={<Privacy></Privacy>} />
           <Route path="/help" element={<Help></Help>} />
-          <Route path="/post" element={<Post></Post>} />
+          <Route path="/post" element={<Post un={username}></Post>} />
           <Route path="/profile" element={<Myaccount></Myaccount>}></Route>
           <Route path="/reset" element={<Reset></Reset>}></Route>
         </Route>

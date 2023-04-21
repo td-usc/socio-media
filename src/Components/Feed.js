@@ -12,6 +12,7 @@ export default function Feed(props){
         <div>
           <button className="innerdivbutton" >upvote</button>
           <button className="innerdivbutton">downvote</button>
+          <button className="innerdivbutton">flag as enemy</button>
           <button className="innerdivbutton">add as aquaintance</button>
           <button className="innerdivbutton">destroy post</button>
         </div>

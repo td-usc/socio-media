@@ -11,6 +11,7 @@ export default function Profile(props){
             <div>
             
             <button className="innerdivbutton">flag as enemy</button>
+            <button className="innerdivbutton">add as aquaintance</button>
             <button className="innerdivbutton">report</button>
             </div>
       </div>
