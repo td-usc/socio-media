@@ -39,14 +39,15 @@ export const getTableItem = (tableName, key) => {
 
 export const createUser = (username) => {
     dbclient.getItem({ TableName: "socio-media-users", Key: username }, (err, data) => {
-            if (data.Items.length <= 0) {
-                var Item: {
+            // console.log(data);
+            if (data === null) {
+                var Item = {
                         'Username' : {S: username},
                         'Enemies' : {N: '0'},
                         'Friends' : {N: '0'},
                         'Posts' : {N: '0'}
                     }
-                putTableItem("socio-media-users", Item)
+                putTableItem("socio-media-users", Item);
             }
         })
 }

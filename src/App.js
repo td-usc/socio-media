@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-import { scanTable } from './AWSFunctions';
+import { createUser, scanTable } from './AWSFunctions';
 import './App.css';
 import Feed from './Components/Feed.js';
 import Leaderboard from './Components/Leaderboard';
@@ -102,6 +102,7 @@ function App() {
     if(!user){
       return <Navigate to="/login"></Navigate>;
     }
+    createUser(username);
     return children;
   }
 
