@@ -17,7 +17,11 @@ import Signup from './Components/Signup';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Outlet, Navigate, Link} from "react-router-dom";
 
-function Home({postsinfo}){
+function Home({postsinfo, usersinfo}){
+  // console.log("Home->post");
+  // console.log(postsinfo);
+  // console.log("Home->user");
+  // console.log(usersinfo);
   return(
     <div className='Mainbody'>
       <div className='threecol' id='Leaderboarddiv' tabIndex={0}>
@@ -40,8 +44,8 @@ function Home({postsinfo}){
         <h1 className='sectiontitle'>PROFILE</h1>
         <div className='threecolcontent'>
           {/* <h1>profile</h1> */}
-          {postsinfo.map(item => <Profile{...item}></Profile>)}
-          {postsinfo.map(item => <Profile{...item}></Profile>)}
+          {usersinfo.map(item => <Profile{...item}></Profile>)}
+          {usersinfo.map(item => <Profile{...item}></Profile>)}
         </div>
       </div>
     </div>
@@ -60,6 +64,7 @@ function Template(){
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [users, setUsers] = useState([]);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState(false);
@@ -68,11 +73,25 @@ function App() {
     scanTable('socio-media-posts')
       .then((items) => {
         setPosts(items);
+        console.log("posts");
+        console.log(items);
       })
       .catch((err) => {
         console.error(err);
       });
   }, []);
+  useEffect(() => {
+    scanTable('socio-media-users')
+      .then((items) => {
+        setUsers(items);
+        console.log("users");
+        console.log(items);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
 
   // run it when login button is clicked
   const Authorize = (un, pw) => {
@@ -102,7 +121,7 @@ function App() {
         </div>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/' element={<ProtectedRoute><Template></Template></ProtectedRoute>}>
-          <Route path="/home" element={<Home postsinfo={posts}></Home>} />
+          <Route path="/home" element={<Home postsinfo={posts} usersinfo={users}></Home>} />
           <Route path="/about" element={<About></About>} />
           <Route path="/contact" element={<Contact></Contact>} />
           <Route path="/terms" element={<Terms></Terms>} />
