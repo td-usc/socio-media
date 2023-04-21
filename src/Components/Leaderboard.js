@@ -12,7 +12,6 @@ export default function Leaderboard(props){
             <h5>{props.Downvotes.N}</h5>
             <h5>{props.Upvotes.N}</h5>
 
-            <button className="innerdivbutton">message user</button>
             <button className="innerdivbutton">flag as enemy</button>
             <button className="innerdivbutton">report user</button>
         </div>
