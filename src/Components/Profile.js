@@ -9,7 +9,7 @@ export default function Profile(props){
             <h5>Friends:{props.Friends.N}</h5>
             <h5>Enemies:{props.Enemies.N}</h5>
             <div>
-            <button className="innerdivbutton">message user</button>
+            
             <button className="innerdivbutton">flag as enemy</button>
             <button className="innerdivbutton">report</button>
             </div>

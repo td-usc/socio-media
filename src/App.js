@@ -66,7 +66,6 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
   const [user, setUser] = useState(false);
 
   useEffect(() => {
@@ -94,9 +93,8 @@ function App() {
 
 
   // run it when login button is clicked
-  const Authorize = (un, pw) => {
-    setUser(un === pw);
-    console.log(user);
+  const Authorize = (un) => {
+    setUser(un !== '');
   }
 
   // make sure a user is logged in before allowing access to home, feed, terms, etc
@@ -115,8 +113,7 @@ function App() {
             <h1>Login Page (Just a template. We can change the design later. for now if username and password is same, it will pass the authorization)</h1>
             <form>
                 Username: <input name="username" value={username} onChange={(e) => setUsername(e.target.value)}></input><br></br>
-                Password: <input name="password" value={password} onChange={(e) => setPassword(e.target.value)}></input><br></br>
-                <button type="submit" onClick={() => Authorize(username, password)}> <Link to="/home">Sumbit</Link> </button>
+                <button type="submit" onClick={() => Authorize(username)}> <Link to="/home">Sumbit</Link> </button>
             </form>
         </div>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
