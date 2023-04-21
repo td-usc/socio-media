@@ -162,3 +162,23 @@
 .aboutinnerdiv{
   text-align: left;
 }
+
+.postdiv{
+  width: 50%;
+  margin: auto;
+  height: 75vh;
+  justify-content: center;
+}
+
+.board{
+  width:100%; 
+  margin-top:20px;
+  border: 1px solid black;
+  padding: 15pt;
+  height: 50vh;
+}
+
+.posttextarea{
+  height: 440px;
+  width: 801px;
+}
