@@ -5,6 +5,7 @@ $(document).ready(function(){
     var logins = 10;
     var numoffriends = 11;
     var numofposts = 12;
+    var numofenemies = 2;
 
     //implement if .json file
     /*
@@ -32,9 +33,9 @@ $(document).ready(function(){
         );
     */
 
-        $("#rank").html("Your Ranking: " + rank);
         $("#username").html(username);
         $("#numofposts").html("Total Posts: " + numofposts);
         $("#numoffriends").html("Total Associates: " + numoffriends);
+        $("#numofenemies").html("Total Enemies: " + numofenemies);
 });
   
