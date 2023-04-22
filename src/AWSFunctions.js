@@ -25,6 +25,22 @@ export const scanTable = (tableName) => {
       });
 };
 
+export const getPopular = () => {
+    let params = {
+        TableName: "socio-media-posts",
+        IndexName: "Upvotes_index"
+    };
+    return new Promise((resolve, reject) => {
+        dbclient.query( params, function(err, data) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(data.Items);
+            }
+        });
+    });
+}
+
 export const deleteTableItem = (tableName, key) => {
     dbclient.deleteItem({ TableName: tableName, Key: key }, (err, data) => {
         console.log(err, data)
@@ -41,7 +57,7 @@ export const createUser = (username) => {
     dbclient.getItem({ TableName: "socio-media-users", Key: username }, (err, data) => {
             // console.log(data);
             if (data === null) {
-                var Item = {
+                let Item = {
                         'Username' : {S: username},
                         'Enemies' : {N: '0'},
                         'Friends' : {N: '0'},
@@ -60,9 +76,10 @@ export const createPost = (username, content) => {
         let prevPosts = 0;
         if (data !== null) {
             prevPosts = data.Item.Posts.N;
+            prevPosts += 1
         }
-        var Item = {
-            'Username' : {S: username + '-' + prevPosts},
+        let Item = {
+            'Title' : {S: username + '-' + prevPosts},
             'Content' : {S: content},
             'DestroyCounter' : {N: '0'},
             'Downvotes' : {N: '0'},
