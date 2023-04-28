@@ -26,8 +26,8 @@ function Home(){
     scanTable('socio-media-posts')
       .then((items) => {
         setPosts(items);
-        console.log("posts");
-        console.log(items);
+        // console.log("posts");
+        // console.log(items);
 
         var list = items;
         list.sort((a, b) => b.Upvotes.N - a.Upvotes.N);
@@ -47,8 +47,8 @@ function Home(){
     scanTable('socio-media-users')
       .then((items) => {
         setUsers(items);
-        console.log("users");
-        console.log(items);
+        // console.log("users");
+        // console.log(items);
       })
       .catch((err) => {
         console.error(err);
@@ -60,21 +60,18 @@ function Home(){
       <div className='threecol' id='Leaderboarddiv' tabIndex={0}>
         <h1 className='sectiontitle'>LEADERBOARD</h1>
         <div className='threecolcontent'>
-          {/* <h1>Leaderboard</h1> */}
           {leaderboard.map(item => <Leaderboard{...item}></Leaderboard>)}
         </div>
       </div>
       <div className='threecol' id='Feeddiv' tabIndex={0}>
         <h1 className='sectiontitle'>FEED</h1>
         <div className='threecolcontent'>
-          {/* <h1>feed</h1> */}
           {posts.map(item => <Feed{...item}></Feed>)}
         </div>
       </div>
       <div className='threecol' id='Profilediv' tabIndex={0}>
         <h1 className='sectiontitle'>PROFILE</h1>
         <div className='threecolcontent'>
-          {/* <h1>profile</h1> */}
           {users.map(item => <Profile{...item}></Profile>)}
         </div>
       </div>
