@@ -1,5 +1,6 @@
 import React from "react";
 import '../App.css';
+import {updateTableItem} from '../AWSFunctions'
 
 export default function Profile(props){
     return(
@@ -10,8 +11,8 @@ export default function Profile(props){
             <h5>Enemies:{props.Enemies.N}</h5>
             <div>
             
-            <button className="innerdivbutton">flag as enemy</button>
-            <button className="innerdivbutton">add as aquaintance</button>
+            <button className="innerdivbutton" onClick={() => updateTableItem('socio-media-users', props.Username.S, 'Enemies')}>flag as enemy</button>
+            <button className="innerdivbutton" onClick={() => updateTableItem('socio-media-users', props.Username.S, 'Friends')}>add as aquaintance</button>
             <button className="innerdivbutton">report</button>
             </div>
       </div>

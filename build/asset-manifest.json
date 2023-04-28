@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/socio-media/static/css/main.0c2b3326.css",
     "main.js": "/socio-media/static/js/main.ce3ffbd6.js",
     "static/js/787.38f074a1.chunk.js": "/socio-media/static/js/787.38f074a1.chunk.js",
@@ -11,5 +12,18 @@
   "entrypoints": [
     "static/css/main.0c2b3326.css",
     "static/js/main.ce3ffbd6.js"
+=======
+    "main.css": "/static/css/main.0c2b3326.css",
+    "main.js": "/static/js/main.c7761274.js",
+    "static/js/787.38f074a1.chunk.js": "/static/js/787.38f074a1.chunk.js",
+    "index.html": "/index.html",
+    "main.0c2b3326.css.map": "/static/css/main.0c2b3326.css.map",
+    "main.c7761274.js.map": "/static/js/main.c7761274.js.map",
+    "787.38f074a1.chunk.js.map": "/static/js/787.38f074a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c2b3326.css",
+    "static/js/main.c7761274.js"
+>>>>>>> parent of 2537d35 (Revert "Merge branch 'main' of https://github.com/td-usc/socio-media")
   ]
 }
