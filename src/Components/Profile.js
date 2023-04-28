@@ -11,9 +11,9 @@ export default function Profile(props){
             <h5>Enemies:{props.Enemies.N}</h5>
             <div>
             
-            <button className="innerdivbutton" onClick={() => updateTableItem('socio-media-users', props.Username.S, 'Enemies')}>flag as enemy</button>
-            <button className="innerdivbutton" onClick={() => updateTableItem('socio-media-users', props.Username.S, 'Friends')}>add as aquaintance</button>
-            <button className="innerdivbutton">report</button>
+            <button className="innerdivbutton" class="actbutton" onClick={() => updateTableItem('socio-media-users', props.Username.S, 'Enemies')}>flag as enemy</button>
+            <button className="innerdivbutton" class="actbutton" onClick={() => updateTableItem('socio-media-users', props.Username.S, 'Friends')}>add as aquaintance</button>
+            <button className="innerdivbutton" class="actbutton">report</button>
             </div>
       </div>
     );

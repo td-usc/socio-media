@@ -70,7 +70,7 @@ function Home(){
         </div>
       </div>
       <div className='threecol' id='Profilediv' tabIndex={0}>
-        <h1 className='sectiontitle'>PROFILE</h1>
+        <h1 className='sectiontitle'>PROFILES</h1>
         <div className='threecolcontent'>
           {users.map(item => <Profile{...item}></Profile>)}
         </div>

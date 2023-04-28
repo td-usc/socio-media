@@ -13,9 +13,9 @@ export default function Leaderboard(props){
             <h5>Downvotes: {props.Downvotes.N}</h5>
             <h5>Upvotes: {props.Upvotes.N}</h5>
 
-            <button className="innerdivbutton" onClick={() => updateTableItem('socio-media-users', namelist[0], 'Enemies')}>flag as enemy</button>
-            <button className="innerdivbutton" onClick={() => updateTableItem('socio-media-users', namelist[0], 'Friends')}>add as aquaintance</button>
-            <button className="innerdivbutton">report user</button>
+            <button className="innerdivbutton" class="actbutton" onClick={() => updateTableItem('socio-media-users', namelist[0], 'Enemies')}>flag as enemy</button>
+            <button className="innerdivbutton" class="actbutton" onClick={() => updateTableItem('socio-media-users', namelist[0], 'Friends')}>add as aquaintance</button>
+            <button className="innerdivbutton" class="actbutton">report user</button>
         </div>
       
     );
