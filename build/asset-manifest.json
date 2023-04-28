@@ -1,29 +1,15 @@
 {
   "files": {
-<<<<<<< HEAD
-    "main.css": "/socio-media/static/css/main.0c2b3326.css",
-    "main.js": "/socio-media/static/js/main.ce3ffbd6.js",
+    "main.css": "/socio-media/static/css/main.7f9a19a4.css",
+    "main.js": "/socio-media/static/js/main.f62508b5.js",
     "static/js/787.38f074a1.chunk.js": "/socio-media/static/js/787.38f074a1.chunk.js",
     "index.html": "/socio-media/index.html",
-    "main.0c2b3326.css.map": "/socio-media/static/css/main.0c2b3326.css.map",
-    "main.ce3ffbd6.js.map": "/socio-media/static/js/main.ce3ffbd6.js.map",
+    "main.7f9a19a4.css.map": "/socio-media/static/css/main.7f9a19a4.css.map",
+    "main.f62508b5.js.map": "/socio-media/static/js/main.f62508b5.js.map",
     "787.38f074a1.chunk.js.map": "/socio-media/static/js/787.38f074a1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c2b3326.css",
-    "static/js/main.ce3ffbd6.js"
-=======
-    "main.css": "/static/css/main.0c2b3326.css",
-    "main.js": "/static/js/main.c7761274.js",
-    "static/js/787.38f074a1.chunk.js": "/static/js/787.38f074a1.chunk.js",
-    "index.html": "/index.html",
-    "main.0c2b3326.css.map": "/static/css/main.0c2b3326.css.map",
-    "main.c7761274.js.map": "/static/js/main.c7761274.js.map",
-    "787.38f074a1.chunk.js.map": "/static/js/787.38f074a1.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.0c2b3326.css",
-    "static/js/main.c7761274.js"
->>>>>>> parent of 2537d35 (Revert "Merge branch 'main' of https://github.com/td-usc/socio-media")
+    "static/css/main.7f9a19a4.css",
+    "static/js/main.f62508b5.js"
   ]
 }

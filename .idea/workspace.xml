@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="148fcb08-5b09-4536-88a7-e14bd9ace3c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.073c9b0a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.073c9b0a.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.a3fb4388.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.a3fb4388.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.ce3ffbd6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.ce3ffbd6.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.ce3ffbd6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +76,7 @@
       <workItem from="1681438580626" duration="949000" />
       <workItem from="1682042350437" duration="4752000" />
       <workItem from="1682199394968" duration="884000" />
-      <workItem from="1682647741169" duration="7988000" />
+      <workItem from="1682647741169" duration="8280000" />
     </task>
     <servers />
   </component>
