@@ -90,6 +90,11 @@
   font-style:normal;
   margin-top:0;
 }
+textarea{
+  max-width:100%;
+  max-height:350px;
+}
+
 
 .Mainbody{
   display: flex;
@@ -138,7 +143,7 @@
   font-weight:bold;
 }
 
-#termsandcondition{
+.centercontent{
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -147,6 +152,16 @@
   justify-content: center;
   height: 75vh;
   overflow: scroll;
+}
+
+#profileboard{
+  width:50%;
+  height:fit-content;
+  margin:auto;
+  justify-content:space-between;
+}
+#profileboard img{
+  width:20%;
 }
 
 .aboutflexparent{

@@ -113,24 +113,37 @@ export const putTableItem = (tableName, item) => {
 export const updateTableItem = (tableName, key, itemName) => {
 
     // Upvotes and Downvotes
-    if (tableName === "socio-media-users") {
+    if (tableName === "socio-media-posts") {
         dbclient.getItem({TableName: tableName, Key: {"Title": {S: key}}}, (err, data) => {
 
-            if (tableName === "socio-media-posts") {
-                if (itemName !== "Upvotes" && itemName !== "Downvotes" && itemName !== "DestroyCounter") {
-                    console.log("Could not update post");
-                    return;
-                }
-                if (itemName === "Upvotes") {
-                    data.Item.Upvotes = {N: (Number(data.Item.Upvotes.N) + 1).toString()};
-                }
-                if (itemName === "Downvotes") {
-                    data.Item.Downvotes = {N: (Number(data.Item.Downvotes.N) + 1).toString()};
-                }
-                if (itemName === "DestroyCounter") {
-                    data.Item.DestroyCounter = {N: (Number(data.Item.DestroyCounter.N) + 1).toString()};
-                }
+            if (itemName !== "Upvotes" && itemName !== "Downvotes" && itemName !== "DestroyCounter") {
+                console.log("Could not update post");
+                return;
+            }
+            if (itemName === "Upvotes") {
+                data.Item.Upvotes = {N: (Number(data.Item.Upvotes.N) + 1).toString()};
+            }
+            if (itemName === "Downvotes") {
+                data.Item.Downvotes = {N: (Number(data.Item.Downvotes.N) + 1).toString()};
+            }
+            if (itemName === "DestroyCounter") {
+                data.Item.DestroyCounter = {N: (Number(data.Item.DestroyCounter.N) + 1).toString()};
+            }
 
+            dbclient.putItem({TableName: tableName, Item: data.Item}, (err, data) => {
+                console.log(err, data)
+            })
+        })
+    }
+    else
+    {
+        dbclient.getItem({TableName: tableName, Key: {"Title": {S: key}}}, (err, data) => {
+
+            if (itemName === "Enemies") {
+                data.Item.Enemies = {N: (Number(data.Item.Enemies.N) + 1).toString()};
+            }
+            if (itemName === "Friends") {
+                data.Item.Friends = {N: (Number(data.Item.Friends.N) + 1).toString()};
             }
 
             dbclient.putItem({TableName: tableName, Item: data.Item}, (err, data) => {
