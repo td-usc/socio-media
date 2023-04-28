@@ -26,12 +26,19 @@ export const scanTable = (tableName) => {
 };
 
 export const getPopular = () => {
+    console.log("get popular started");
     let params = {
         TableName: "socio-media-posts",
-        IndexName: "Upvotes_index"
+        IndexName: "Upvotes-index",
+        KeyConditionExpression : "Upvotes GE :UpvotesVal",
+        ExpressionAttributeValues : {
+            ':UpvotesVal' : {N: '0'}
+        }
     };
     return new Promise((resolve, reject) => {
         dbclient.query( params, function(err, data) {
+            console.log("ger populat result")
+            console.log(err, data);
             if (err) {
                 reject(err);
             } else {

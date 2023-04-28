@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-import { createUser, scanTable } from './AWSFunctions';
+import { createUser, getPopular, scanTable } from './AWSFunctions';
 import './App.css';
 import Feed from './Components/Feed.js';
 import Leaderboard from './Components/Leaderboard';
@@ -21,11 +21,23 @@ import { BrowserRouter, Routes, Route, Outlet, Navigate, Link} from "react-route
 function Home(){
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
+  const [leaderboard, setleaderboard] = useState([]);
   useEffect(() => {
     scanTable('socio-media-posts')
       .then((items) => {
         setPosts(items);
         console.log("posts");
+        console.log(items);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+  useEffect(() => {
+    getPopular()
+      .then((items) => {
+        setleaderboard(items);
+        console.log("leaderboard");
         console.log(items);
       })
       .catch((err) => {
@@ -50,7 +62,7 @@ function Home(){
         <h1 className='sectiontitle'>LEADERBOARD</h1>
         <div className='threecolcontent'>
           {/* <h1>Leaderboard</h1> */}
-          {posts.map(item => <Leaderboard{...item}></Leaderboard>)}
+          {leaderboard.map(item => <Leaderboard{...item}></Leaderboard>)}
         </div>
       </div>
       <div className='threecol' id='Feeddiv' tabIndex={0}>
@@ -82,34 +94,8 @@ function Template(){
 }
 
 function App() {
-  // const [posts, setPosts] = useState([]);
-  // const [users, setUsers] = useState([]);
   const [username, setUsername] = useState('');
   const [user, setUser] = useState(false);
-
-  // useEffect(() => {
-  //   scanTable('socio-media-posts')
-  //     .then((items) => {
-  //       setPosts(items);
-  //       console.log("posts");
-  //       console.log(items);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // }, []);
-  // useEffect(() => {
-  //   scanTable('socio-media-users')
-  //     .then((items) => {
-  //       setUsers(items);
-  //       console.log("users");
-  //       console.log(items);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // }, []);
-
 
   // run it when login button is clicked
   const Authorize = (un) => {
