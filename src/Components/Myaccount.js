@@ -21,6 +21,10 @@ export default function Account({un}){
           });
     }, [un]);
 
+    const logOut = () => {
+        localStorage.clear();
+    }
+
 
     return(
         <div className="accountparentdiv">
@@ -40,6 +44,7 @@ export default function Account({un}){
                             <b>Number of Total Enemies</b>: {users[2]}
                         </p>
                         <Link className="flexnavbutt" to="/reset" id="resetlink">RESET ACCOUNT</Link>
+                        <button id="logout" onClick={() => logOut()}> <Link to="/login">Log Out</Link> </button>
                 </div>
             </div>
         </div>
