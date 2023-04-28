@@ -111,7 +111,7 @@ export const putTableItem = (tableName, item) => {
 }
 
 export const updateTableItem = (tableName, key, itemName) => {
-    console.log("update table item called on "+ key);
+
     // Upvotes and Downvotes
     if (tableName === "socio-media-posts") {
         dbclient.getItem({TableName: tableName, Key: {"Title": {S: key}}}, (err, data) => {
@@ -137,7 +137,7 @@ export const updateTableItem = (tableName, key, itemName) => {
     }
     else
     {
-        dbclient.getItem({TableName: tableName, Key: {"Username": {S: key}}}, (err, data) => {
+        dbclient.getItem({TableName: tableName, Key: {"Title": {S: key}}}, (err, data) => {
 
             if (itemName === "Enemies") {
                 data.Item.Enemies = {N: (Number(data.Item.Enemies.N) + 1).toString()};
