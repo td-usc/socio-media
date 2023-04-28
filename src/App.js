@@ -34,7 +34,7 @@ function Home(){
       });
 
     
-  }, []);
+  });
 
   useEffect(() => {
     scanTable('socio-media-users')
@@ -44,7 +44,7 @@ function Home(){
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  });
 
   return(
     <div className='Mainbody'>

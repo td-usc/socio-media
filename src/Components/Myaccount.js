@@ -19,7 +19,7 @@ export default function Account({un}){
           .catch((err) => {
             console.error(err);
           });
-    }, []);
+    }, [un]);
 
 
     return(
