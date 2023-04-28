@@ -87,11 +87,13 @@ function App() {
   // run it when login button is clicked
   const Authorize = (un) => {
     setUser(un !== '');
+    localStorage.setItem("user", username);
   }
 
   // make sure a user is logged in before allowing access to home, feed, terms, etc
   const ProtectedRoute = ({children}) => {
-    if(!user){
+    if(!user && localStorage.getItem("user") == null){
+      console.log("user stored in cookies: " + localStorage.getItem("user"));
       return <Navigate to="/login"></Navigate>;
     }
     createUser(username);
