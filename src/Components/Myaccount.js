@@ -44,7 +44,7 @@ export default function Account({un}){
                             <b>Number of Total Enemies</b>: {users[2]}
                         </p>
                         <Link className="flexnavbutt" to="/reset" id="resetlink">RESET ACCOUNT</Link>
-                        <button id="logout" onClick={() => logOut()}> <Link to="/login">Log Out</Link> </button>
+                        <button className="actbutton submitbutton" onClick={() => logOut()}> <Link to="/login">Log Out</Link> </button>
                 </div>
             </div>
         </div>

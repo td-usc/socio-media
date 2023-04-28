@@ -113,6 +113,9 @@ textarea{
   cursor: pointer;
   margin-right:10px;
 }
+.submitbutton{
+  margin: 0px 0px 0px 10px;
+}
 
 
 .Mainbody{
@@ -182,6 +185,7 @@ textarea{
 #profileboard img{
   width:20%;
 }
+
 
 .aboutflexparent{
   display: flex;

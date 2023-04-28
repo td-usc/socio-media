@@ -92,10 +92,12 @@ function App() {
 
   // make sure a user is logged in before allowing access to home, feed, terms, etc
   const ProtectedRoute = ({children}) => {
-    if(!user && localStorage.getItem("user") == null){
-      console.log("user stored in cookies: " + localStorage.getItem("user"));
-      return <Navigate to="/login"></Navigate>;
-    }
+    /*if(localStorage.getItem("user") == null){*/
+      if(!user){
+          console.log("user stored in cookies: " + localStorage.getItem("user"));
+          return <Navigate to="/login"></Navigate>;
+      }
+
     createUser(username);
     return children;
   }
@@ -108,7 +110,7 @@ function App() {
             <h1>Log in</h1>
             <form>
                 Username: <input name="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
-                <button type="submit" onClick={() => Authorize(username)}> <Link to="/home">Submit</Link> </button>
+                <button type="submit" class="actbutton submitbutton" onClick={() => Authorize(username)}> <Link to="/home">Submit</Link> </button>
             </form>
         </div>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
