@@ -9,8 +9,8 @@ export default function Leaderboard(props){
         <div className="innerdiv">
             <h1>{namelist[0]}</h1>
             <h5>{props.Content.S}</h5>
-            <h5>{props.Downvotes.N}</h5>
-            <h5>{props.Upvotes.N}</h5>
+            <h5>Downvotes: {props.Downvotes.N}</h5>
+            <h5>Upvotes: {props.Upvotes.N}</h5>
 
             <button className="innerdivbutton">flag as enemy</button>
             <button className="innerdivbutton">add as aquaintance</button>
