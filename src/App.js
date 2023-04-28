@@ -1,4 +1,3 @@
-//import logo from './logo.svg';
 import { createUser, scanTable } from './AWSFunctions';
 import './App.css';
 import Feed from './Components/Feed.js';
@@ -26,9 +25,6 @@ function Home(){
     scanTable('socio-media-posts')
       .then((items) => {
         setPosts(items);
-        // console.log("posts");
-        // console.log(items);
-
         var list = items;
         list.sort((a, b) => b.Upvotes.N - a.Upvotes.N);
         setleaderboard(list);
@@ -40,15 +36,10 @@ function Home(){
     
   }, []);
 
-  // useEffect(() => {
-    
-  // }, []);
   useEffect(() => {
     scanTable('socio-media-users')
       .then((items) => {
         setUsers(items);
-        // console.log("users");
-        // console.log(items);
       })
       .catch((err) => {
         console.error(err);
@@ -127,8 +118,8 @@ function App() {
           <Route path="/privacy" element={<Privacy></Privacy>} />
           <Route path="/help" element={<Help></Help>} />
           <Route path="/post" element={<Post un={username}></Post>} />
-          <Route path="/profile" element={<Myaccount></Myaccount>}></Route>
-          <Route path="/reset" element={<Reset></Reset>}></Route>
+          <Route path="/profile" element={<Myaccount un={username}></Myaccount>}></Route>
+          <Route path="/reset" element={<Reset un={username}></Reset>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

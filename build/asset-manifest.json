@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/socio-media/static/css/main.7f9a19a4.css",
-    "main.js": "/socio-media/static/js/main.f62508b5.js",
-    "static/js/787.38f074a1.chunk.js": "/socio-media/static/js/787.38f074a1.chunk.js",
-    "index.html": "/socio-media/index.html",
-    "main.7f9a19a4.css.map": "/socio-media/static/css/main.7f9a19a4.css.map",
-    "main.f62508b5.js.map": "/socio-media/static/js/main.f62508b5.js.map",
-    "787.38f074a1.chunk.js.map": "/socio-media/static/js/787.38f074a1.chunk.js.map"
+    "main.css": "/static/css/main.7f9a19a4.css",
+    "main.js": "/static/js/main.45134649.js",
+    "static/js/787.38f074a1.chunk.js": "/static/js/787.38f074a1.chunk.js",
+    "index.html": "/index.html",
+    "main.7f9a19a4.css.map": "/static/css/main.7f9a19a4.css.map",
+    "main.45134649.js.map": "/static/js/main.45134649.js.map",
+    "787.38f074a1.chunk.js.map": "/static/js/787.38f074a1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7f9a19a4.css",
-    "static/js/main.f62508b5.js"
+    "static/js/main.45134649.js"
   ]
 }

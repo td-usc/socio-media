@@ -93,6 +93,9 @@
 #resetlink{
   color:red;
 }
+#resetlink:hover{
+  text-decoration:underline;
+}
 #resetbox{
   border:1px solid black;
   padding:30px;
@@ -233,4 +236,8 @@ textarea{
 }
 .logindiv input{
   width: 20vw;
+}
+.accountparentdiv{
+  display: flex;
+  height: 75vh;
 }
