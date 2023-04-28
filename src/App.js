@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-import { createUser, getPopular, scanTable } from './AWSFunctions';
+import { createUser, scanTable } from './AWSFunctions';
 import './App.css';
 import Feed from './Components/Feed.js';
 import Leaderboard from './Components/Leaderboard';
@@ -28,22 +28,21 @@ function Home(){
         setPosts(items);
         console.log("posts");
         console.log(items);
+
+        var list = items;
+        list.sort((a, b) => b.Upvotes.N - a.Upvotes.N);
+        setleaderboard(list);
       })
       .catch((err) => {
         console.error(err);
       });
+
+    
   }, []);
-  useEffect(() => {
-    getPopular()
-      .then((items) => {
-        setleaderboard(items);
-        console.log("leaderboard");
-        console.log(items);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
+
+  // useEffect(() => {
+    
+  // }, []);
   useEffect(() => {
     scanTable('socio-media-users')
       .then((items) => {
