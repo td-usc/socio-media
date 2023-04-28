@@ -77,6 +77,13 @@ export const createPost = (username, content) => {
         if (data !== null) {
             prevPosts = data.Item.Posts.N;
             prevPosts += 1
+            let updatedItem = {
+                'Username' : {S: username},
+                'Enemies' : {N: '0'},
+                'Friends' : {N: '0'},
+                'Posts' : {N: data.Item.Posts.N + 1}
+            }
+            putTableItem("socio-media-users", updatedItem);
         }
         let Item = {
             'Title' : {S: username + '-' + prevPosts},
