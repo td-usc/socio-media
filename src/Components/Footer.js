@@ -11,7 +11,6 @@ export default function Footer(){
                 <Link className="flexnavbutt" to="/home">FEED</Link>
                 <Link className="flexnavbutt" to="/post">POST</Link>
                 <Link className="flexnavbutt" to="/profile">PROFILE</Link>
-                <Link className="flexnavbutt" to="/reset">RESET</Link>
             </div>
         </div>
     );
