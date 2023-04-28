@@ -129,10 +129,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/login' element={
-        <div>
-            <h1>Login Page (put anything. If the user doesnt exist, it will automatically make a user, if not it will login.)</h1>
+        <div className='logindiv'>
+            <h1>Log in</h1>
             <form>
-                Username: <input name="username" value={username} onChange={(e) => setUsername(e.target.value)}></input><br></br>
+                Username: <input name="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
                 <button type="submit" onClick={() => Authorize(username)}> <Link to="/home">Submit</Link> </button>
             </form>
         </div>}></Route>

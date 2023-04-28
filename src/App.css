@@ -182,3 +182,24 @@
   height: 440px;
   width: 801px;
 }
+
+.logindiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  border: 1px solid #b4b0b0;
+  padding: 20px;
+  max-width: 30vw;
+  border-radius: 3px;
+  margin-top: 8vh;
+}
+.logindiv h1{
+  width: 30vw;
+  text-align: center;
+  background: whitesmoke;
+  border-radius: 5px;
+}
+.logindiv input{
+  width: 20vw;
+}
