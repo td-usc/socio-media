@@ -42,19 +42,19 @@ export const getPopular = () => {
 }
 
 export const deleteTableItem = (tableName, key) => {
-    dbclient.deleteItem({ TableName: tableName, Key: key }, (err, data) => {
+    dbclient.deleteItem({ TableName: tableName, Key: {"Username": {S: key}} }, (err, data) => {
         console.log(err, data)
     })
 }
 
 export const getTableItem = (tableName, key) => {
-    dbclient.getItem({ TableName: tableName, Key: key }, (err, data) => {
+    dbclient.getItem({ TableName: tableName, Key: {"Username": {S: key}} }, (err, data) => {
         console.log(err, data)
     })
 }
 
 export const createUser = (username) => {
-    dbclient.getItem({ TableName: "socio-media-users", Key: username }, (err, data) => {
+    dbclient.getItem({ TableName: "socio-media-users", Key: {"Username": {S: username}} }, (err, data) => {
             // console.log(data);
             if (data === null) {
                 let Item = {
@@ -72,27 +72,28 @@ export const createPost = (username, content) => {
     console.log(username);
     console.log(content);
 
-    dbclient.getItem({ TableName: "socio-media-users", Key: username }, (err, data) => {
+    dbclient.getItem({ TableName: "socio-media-users", Key: {"Username": {S: username}} }, (err, data) => {
         let prevPosts = 0;
         if (data !== null) {
-            prevPosts = data.Item.Posts.N;
+            prevPosts = Number(data.Item.Posts.N);
             prevPosts += 1
+
             let updatedItem = {
-                'Username' : {S: username},
-                'Enemies' : {N: '0'},
-                'Friends' : {N: '0'},
-                'Posts' : {N: data.Item.Posts.N + 1}
+                'Username': {S: username},
+                'Enemies': {N: '0'},
+                'Friends': {N: '0'},
+                'Posts': {N: String(prevPosts)}
             }
-            putTableItem("socio-media-users", updatedItem);
+            putTableItem("socio-media-users", updatedItem)
+            let Item = {
+                'Title': {S: username + '-' + prevPosts},
+                'Content': {S: content},
+                'DestroyCounter': {N: '0'},
+                'Downvotes': {N: '0'},
+                'Upvotes': {N: '0'}
+            }
+            putTableItem("socio-media-posts", Item);
         }
-        let Item = {
-            'Title' : {S: username + '-' + prevPosts},
-            'Content' : {S: content},
-            'DestroyCounter' : {N: '0'},
-            'Downvotes' : {N: '0'},
-            'Upvotes' : {N: '0'}
-        }
-        putTableItem("socio-media-posts", Item);
     })
 }
 
@@ -105,32 +106,29 @@ export const putTableItem = (tableName, item) => {
 export const updateTableItem = (tableName, key, itemName) => {
 
     // Upvotes and Downvotes
-    dbclient.getItem({ TableName: tableName, Key: key }, (err, data) => {
+    if (tableName === "socio-media-users") {
+        dbclient.getItem({TableName: tableName, Key: {"Title": {S: key}}}, (err, data) => {
 
-        if(tableName === "socio-media-posts")
-        {
-            if (itemName !== "Upvotes" && itemName !== "Downvotes" && itemName !== "DestroyCounter")
-            {
-                console.log("Could not update post");
-                return;
-            }
-            if (itemName === "Upvotes")
-            {
-                data.Item.Upvotes = {N: (Number(data.Item.Upvotes.N) + 1).toString()};
-            }
-            if (itemName === "Downvotes")
-            {
-                data.Item.Downvotes = {N: (Number(data.Item.Downvotes.N) + 1).toString()};
-            }
-            if (itemName === "DestroyCounter")
-            {
-                data.Item.DestroyCounter = {N: (Number(data.Item.DestroyCounter.N) + 1).toString()};
-            }
-            
-        }
+            if (tableName === "socio-media-posts") {
+                if (itemName !== "Upvotes" && itemName !== "Downvotes" && itemName !== "DestroyCounter") {
+                    console.log("Could not update post");
+                    return;
+                }
+                if (itemName === "Upvotes") {
+                    data.Item.Upvotes = {N: (Number(data.Item.Upvotes.N) + 1).toString()};
+                }
+                if (itemName === "Downvotes") {
+                    data.Item.Downvotes = {N: (Number(data.Item.Downvotes.N) + 1).toString()};
+                }
+                if (itemName === "DestroyCounter") {
+                    data.Item.DestroyCounter = {N: (Number(data.Item.DestroyCounter.N) + 1).toString()};
+                }
 
-        dbclient.putItem({ TableName: tableName, Item: data.Item }, (err, data) => {
-            console.log(err, data)
+            }
+
+            dbclient.putItem({TableName: tableName, Item: data.Item}, (err, data) => {
+                console.log(err, data)
+            })
         })
-    })
+    }
 }
