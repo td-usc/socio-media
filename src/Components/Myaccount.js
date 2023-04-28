@@ -1,5 +1,6 @@
 import React from "react";
-import '../App.css'
+import '../App.css';
+import {Link} from "react-router-dom";
 
 export default function Account(){
     return(
@@ -18,6 +19,7 @@ export default function Account(){
                     <p id="numofenemies">
                         "Number of Total Enemies"
                     </p>
+                    <Link className="flexnavbutt" to="/reset" id="resetlink">RESET ACCOUNT</Link>
             </div>
         </div>
     );
