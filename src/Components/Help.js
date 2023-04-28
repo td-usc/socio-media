@@ -3,6 +3,9 @@ import '../App.css';
 
 export default function Help(){
     return(
-        <h1>Help page</h1>
+        <div class="flexparent centercontent">
+        <h1>Help Page</h1>
+        <p>We can't help you.</p>
+        </div>
     );
 }

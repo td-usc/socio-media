@@ -16,7 +16,7 @@ export default function About(){
             </div>
 
 
-            <p>*Note: Socio-Media is not an accurate and ethical depiction of Antisocial Personality Disorder and its victims. Socio-Media is intended for entertainment and should not be used as a model for symptoms of psychopathy.</p>
+            <p>*Note: Socio-Media is not an accurate and ethical depiction of Antisocial Personality Disorder and its victims. Socio-Media is intended for entertainment and should not be used as a model for symptoms of sociopathy.</p>
         </div>
     );
 }
