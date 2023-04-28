@@ -3,6 +3,6 @@ import '../App.css'
 
 export default function Contact(){
     return(
-        <h1>Contact Page</h1>
+        <a href="https://www.instagram.com/cocausc/?hl=en" target="_new" class="centercontent">Contact Us</a>
     );
 }
