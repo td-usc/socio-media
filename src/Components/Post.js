@@ -12,8 +12,8 @@ export default function Post({un}){
                 <form>
                     <textarea className='posttextarea' onChange={(e) => setContent(e.target.value)} placeholder='What would you like to say?'></textarea>
                     <div>
-                        <button onClick={() => createPost(un, content)}><Link to="/home">Submit</Link></button>
-                        <button><Link to="/home">Cancel</Link></button>
+                        <button className="actbutton submitbutton" onClick={() => createPost(un, content)}><Link to="/home">Submit</Link></button>
+                        <button className="actbutton submitbutton"><Link to="/home">Cancel</Link></button>
                     </div>
                 </form>
             </div>

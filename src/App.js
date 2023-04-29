@@ -110,7 +110,7 @@ function App() {
         <div className='logindiv'>
             <h1>Log in</h1>
             <form>
-                Username: <input name="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
+                Username: <input id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
                 <button type="submit" class="actbutton submitbutton" onClick={() => Authorize(username)}> <Link to="/home">Submit</Link> </button>
             </form>
         </div>}></Route>
