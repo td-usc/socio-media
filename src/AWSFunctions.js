@@ -25,6 +25,13 @@ export const scanTable = (tableName) => {
       });
 };
 
+export const putTableItem = (tableName, item) => {
+    console.log("put table reached");
+    dbclient.putItem({ TableName: tableName, Item: item }, (err, data) => {
+        console.log(err, data)
+    })
+}
+
 // export const getPopular = () => {
 //     console.log("get popular started");
 //     let params = {
@@ -61,15 +68,16 @@ export const getTableItem = (tableName, key) => {
 }
 
 export const createUser = (username) => {
+    console.log("creating user");
     dbclient.getItem({ TableName: "socio-media-users", Key: {"Username": {S: username}} }, (err, data) => {
-            // console.log(data);
-            if (data === null) {
+            console.log(data);
+            if (data === null || data.Item == null) {
                 let Item = {
                         'Username' : {S: username},
                         'Enemies' : {N: '0'},
                         'Friends' : {N: '0'},
                         'Posts' : {N: '0'}
-                    }
+                    };
                 putTableItem("socio-media-users", Item);
             }
         })
@@ -82,6 +90,10 @@ export const createPost = (username, content) => {
     dbclient.getItem({ TableName: "socio-media-users", Key: {"Username": {S: username}} }, (err, data) => {
         let prevPosts = 0;
         if (data !== null) {
+            console.log("data");
+            console.log(data);
+            console.log("data.Item");
+            console.log(data.Item);
             prevPosts = Number(data.Item.Posts.N);
             prevPosts += 1
 
@@ -104,11 +116,6 @@ export const createPost = (username, content) => {
     })
 }
 
-export const putTableItem = (tableName, item) => {
-    dbclient.putItem({ TableName: tableName, Item: item }, (err, data) => {
-        console.log(err, data)
-    })
-}
 
 export const updateTableItem = (tableName, key, itemName) => {
     console.log("update table item called on "+ key);

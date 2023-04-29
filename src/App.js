@@ -87,6 +87,7 @@ function App() {
   // run it when login button is clicked
   const Authorize = (un) => {
     setUser(un !== '');
+    createUser(un);
     localStorage.setItem("user", username);
   }
 
